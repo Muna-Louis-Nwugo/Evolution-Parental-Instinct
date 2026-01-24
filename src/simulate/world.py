@@ -1,4 +1,5 @@
 from blip import Blip
+import move
 import random
 import logging
 
@@ -32,5 +33,10 @@ class World():
             blips.append(Blip((x, y)))
         
         return blips
+    
+
+    def move_blips(self) -> None:
+        move.move_blips(self.blips)
+
     
 World(12, 12, 12)
