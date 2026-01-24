@@ -8,7 +8,6 @@ class Move():
     def __init__(self):
         pass
 
-
     """
     update the position of a given blip
 

@@ -20,7 +20,10 @@ classifiers = [
 ]
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
-dependencies = []
+dependencies = [
+    typing,
+    random
+]
 
 [project.urls]
 Homepage = https://github.com/Muna-Louis-Nwugo/Evolution-Parental-Instinct
