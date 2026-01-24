@@ -13,14 +13,13 @@ class World():
     def __init__(
             self, 
             num_starting_blips: int,
-            width,
-            height):
+            width: int,
+            height: int):
         
         self.width = width
         self.height = height
 
         self.blips: list[Blip] = self.__generate_blips(num_starting_blips)
-        logging.info(f"blips: {self.blips}")
 
 
     def __generate_blips(self, num) -> list[Blip]:
@@ -35,8 +34,13 @@ class World():
         return blips
     
 
+    """
+    Calls relevant function to move all blips
+    """
     def move_blips(self) -> None:
-        move.move_blips(self.blips)
+        move.move_blips(self.blips, self.width, self.height)
 
-    
-World(12, 12, 12)
+
+if __name__ == "__main__":  
+    world = World(1, 12, 12)
+    world.move_blips()

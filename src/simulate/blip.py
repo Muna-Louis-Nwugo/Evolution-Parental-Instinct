@@ -16,10 +16,13 @@ Properties:
 Methods:
 Getters:
 - get_pos() -> tuple[float, float]
+- get_target() -> tuple[float, float] | None
 
 Modifiers:
 - update_pos(offset: tuple[float, float]) -> None 
     ==> changes this Blips Position
+- set_target(target) -> None:
+    ==> sets this blip's target
 
 """
 
@@ -29,7 +32,8 @@ class Blip():
                  father: Self | None = None,
                  mother: Self| None = None,
                  velocity: tuple[float, float] = (0, 0),
-                 acceleration: tuple[float, float] = (0, 0)):
+                 acceleration: tuple[float, float] = (0, 0),
+                 target: tuple[float, float] | None = None):
         self.position = position
         self.age = 0
         self.father = father
@@ -37,6 +41,7 @@ class Blip():
         self.sex = random.choice([True, False])
         self.velocity = velocity
         self.acceleration = acceleration
+        self.target = target
     
     def __repr__(self) -> str:
         return f"Blip(pos={self.position}, velocity={self.velocity}, acceleration={self.acceleration} sex={self.sex}, age={self.age})"
@@ -46,6 +51,18 @@ class Blip():
     """
     def get_pos(self) -> tuple[float, float]:
         return self.position
+    
+    """
+    gets this blip's target
+    """
+    def get_target(self) -> tuple[float, float] | None:
+        return self.target
+
+    """
+    sets this blip's target
+    """
+    def set_target(self, target: tuple[float, float]) -> None:
+        self.target = target
 
     """
     Updates this blip's position
