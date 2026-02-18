@@ -1,5 +1,6 @@
 from typing import Self
 import random
+import math
 
 """
 This module contains the class for creating a blip.
@@ -32,7 +33,6 @@ class Blip():
                  father: Self | None = None,
                  mother: Self| None = None,
                  velocity: tuple[float, float] = (0, 0),
-                 acceleration: tuple[float, float] = (0, 0),
                  target: tuple[float, float] | None = None):
         self.position = position
         self.age = 0
@@ -40,11 +40,11 @@ class Blip():
         self.mother = mother
         self.sex = random.choice([True, False])
         self.velocity = velocity
-        self.acceleration = acceleration
+        self.max_accel = 1 #max acceleration to 2 units per tick
         self.target = target
     
     def __repr__(self) -> str:
-        return f"Blip(pos={self.position}, velocity={self.velocity}, acceleration={self.acceleration} sex={self.sex}, age={self.age})"
+        return f"Blip(pos={self.position}, velocity={self.velocity}, sex={self.sex}, age={self.age}), target={self.target}"
 
     """
     gets this blip's position
@@ -72,3 +72,6 @@ class Blip():
         y = self.position[1]
 
         self.position = (x + offset[0], y + offset[1])
+    
+    def update_accel(self, accel: tuple[float, float]):
+        acceleration_applied = (min(accel[0], self.max_accel), min(accel[1], self.max_accel))

@@ -18,6 +18,7 @@ class World():
         
         self.width = width
         self.height = height
+        self.time_elapsed: int = 0
 
         self.blips: list[Blip] = self.__generate_blips(num_starting_blips)
 
@@ -35,12 +36,12 @@ class World():
     
 
     """
-    Calls relevant function to move all blips
+    Steps through simulation
     """
-    def move_blips(self) -> None:
+    def step(self) -> None:
         move.move_blips(self.blips, self.width, self.height)
 
 
 if __name__ == "__main__":  
     world = World(1, 12, 12)
-    world.move_blips()
+    world.step()
