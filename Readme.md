@@ -47,7 +47,7 @@ This makes for a much more straightforward implementation of things like reprodu
     |      Decisions                         |
     |          |                             |
     |    --------------                      |
-    |    |            |                      |   
+    |    |            |                      |
     |    V            V                      |
     --- Move    Reproduction -----------------
 ```
@@ -83,19 +83,70 @@ This makes for a much more straightforward implementation of things like reprodu
 I should note,  World sends all the agents to Decisions at once, then Decisions to Move, and then move applied them all.
 ## Rules
 
+### Background
+Our blips live on a rogue planet, drifting through interstellar space, mostly undetectable to human beings. They live underwater on the sea floor.
+Their planets tectonic movement, combined with the gravitational energy provided by their world's interaction with her sister plannet, create just 
+enough thermal energy to allow for liquid water underneath the vast expanse of ice that envelops her surface. A barren, star-less corner of the 
+universe. The blips cannot look forward to the promise of spring in the cold entrails of winter, as neither exist. There are no seasons
+to speak of. No stars to be seen during the nighttime, as day and night hold little meaning on this world. Not that they would be visible anyways 
+through the ice that is their sky. Our blips have evolved to be constantly alert underwater, as the dangers of sleeping in this environment is immense.
+Though they are quite different from any life you would find on earth, many similarities remain. Similar central nervous system as found in most
+intelligent species; a face that resembles that of a blobfish on land; and, crucially, sexual production. Involving a male, and female species.
+
+Huzzah evolution!
+
+### Time scales
+30 seconds = 1 Blip day (their planet spins really fast, probably why they have to live on the sea floor)
+Mating season = 10 Blip days = 5 minutes
+Off season = 30 Blip days = 10 minutes
+1 Year = 40 Blip days = 15 minutes
+
+All blips die at 5 years old (1 hour)
+
 ### Genetics
 Inspired by the research papers linked above:
 
-**child_effort = 0.4(father) + 0.4(mother) + 0.2(random about normal distribution)**
+**effort = 0.4(father) + 0.4(mother) + 0.2(random about normal distribution)**
 This represents the amount of effort that a child might put into its own children.
 
 **reproductive_potential = 0.3(father) + 0.3(mother) + 0.4(random)**
 Randomness is weighted highly here to increase variability and hopefully skew the results of runs into more or less overall
 parental care
 
-**attentional_resources = 0.2(father) + 0.2(mother) + 0.6(random about normal distribution)**
+**attentional_resources = 0.33(father) + 0.33(mother) + 0.33(random about normal distribution)**
+
 
 ### Mating Season
-Blips will be on the hunt for a midnight liason for the duration [insert time] of the mating season. There are, of course, male and female blips. 
+Blips will be on the hunt for a midnight liason for the duration of the mating season. There are, of course, male and female blips. 
 For simplicity's sake, we won't worry much about the mating mechanisms. We'll just say that every encounter between a male and a female has a 10% chance of spawning a child.
-This number is completely arbitrary. I simply believed that it would be high enough to not kill our blips and low enough to not give every single blip a child every single time. 
+This number is completely arbitrary. I simply believed that it would be high enough to not kill our blips and low enough to not give every single blip a child every single time.
+
+Each mating encounter will generate 3 children.1 above replacement, to account for blips who didn't find a mate that season. 
+
+Every blip is eligible to mate after having reached 3 years old.
+
+### Feeding
+Food spawns at random locations every 5 blip days or so. Blips will retain memory of the food locations, sorting by distance and looking for them 
+once they get hungry. Each blip will have an active energy meter that will determine whether or not to loog for food. The effort and 
+attentional_resources genes will determine things like whether the blip feeds their children or themselves first, and if so, how many children they 
+feed before feeding themselves. 
+
+Children will stay in their nests to be fed, but venture out to find food once thieir hunger reaches a threshold.
+
+**hunger_threshold = max(reproductive_potential^2, 0.1)**
+Blips with a higher reproductive potential are more resilient, and more likely to venture out into the wild.
+
+### Predation
+Layered on top of our blips' world is a predation heat map. This will be included as a part of the simulator's spatial partitioning.
+
+The likeliness of dying in a given location will be:
+**death_chance = max(heat * cos^2(π/2 * energy), 0.3)**
+
+The heat of any given partition will be between 0 and 1. If a blip has a full energy bar, their chances of predation goes to 0, 
+as the assumption is that they had enough energy to run away. Conversely, if their energy bar is empty they'll already be dead, but if 
+they weren't, their chances of predation is exactly equal to the heat of the location.
+
+### Traits and States
+TBC
+
+Remember to make Energy tied to hunger
