@@ -83,7 +83,7 @@ This makes for a much more straightforward implementation of things like reprodu
 I should note,  World sends all the agents to Decisions at once, then Decisions to Move, and then move applied them all.
 ## Rules
 
-### Background
+### Lore
 Our blips live on a rogue planet, drifting through interstellar space, mostly undetectable to human beings. They live underwater on the sea floor.
 Their planets tectonic movement, combined with the gravitational energy provided by their world's interaction with her sister plannet, create just 
 enough thermal energy to allow for liquid water underneath the vast expanse of ice that envelops her surface. A barren, star-less corner of the 
