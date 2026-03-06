@@ -98,9 +98,9 @@ intelligent species; a face that resembles that of a blobfish on land; and, cruc
 Huzzah evolution!
 
 ### Time scales
-30 seconds = 1 Blip day (their planet spins really fast, which is why they have to live on the sea floor)
-Mating season = 10 Blip days = 5 minutes
-Off season = 30 Blip days = 10 minutes
+30 seconds = 1 Blip day (their planet spins really fast, which is why they have to live on the sea floor)  
+Mating season = 10 Blip days = 5 minutes  
+Off season = 30 Blip days = 10 minutes  
 1 Year = 40 Blip days = 15 minutes
 
 All blips die at 5 years old (1 hour)
@@ -111,11 +111,11 @@ Inspired by the research papers linked above:
 $$effort = \frac{2}{5}(father) + \frac{2}{5}(mother) + \frac{1}{5}(\text{random})$$
 This represents the amount of effort that a child might put into its own children.
 
-$$reproductive\_potential = \frac{3}{10}(father) + \frac{3}{10}(mother) + \frac{4}{10}(\text{random})$$
+$$reproductive\ potential = \frac{3}{10}(father) + \frac{3}{10}(mother) + \frac{4}{10}(\text{random})$$
 Randomness is weighted highly here to increase variability and hopefully skew the results of runs into more or less overall
 parental care
 
-$$attentional\_resources = \frac{1}{3}(father) + \frac{1}{3}(mother) + \frac{1}{3}(\text{random})$$
+$$attentional\ resources = \frac{1}{3}(father) + \frac{1}{3}(mother) + \frac{1}{3}(\text{random})$$
 This just felt right. You were probably expecting some super thought out explanation, but that's literally it. 
 
 All above genes are on a scale of 0-1. 
@@ -145,7 +145,7 @@ Blips with a higher reproductive potential are more resilient, and more likely t
 ### Predation
 Layered on top of our blips' world is a predation heat map. This will be included as a part of the simulator's spatial partitioning.
 
-The likeliness of dying in a given location will be:
+The likeliness of dying in a given location will be:  
 $$death\_chance = heat \cdot \cos^{2}\left(\frac{\pi}{2} \cdot energy\right)$$
 
 The heat of any given partition will be between 0 and 1. If a blip has a full energy bar, their chances of predation goes to 0, 
@@ -161,22 +161,22 @@ take good care of them, they are less likely to have to venture beyond the nest.
 
 ### Traits, States, and Objectives
 #### States
-**hunger** - A little counter-intuitive, this will actually be the _lack_ of hunger. A higher number means less hunger, a lower number means more hunger. 
-0 hunger will start eating away at energy, while full hunger will give energy a boost. 
-**energy** - 0-1; Dictates the amount of energy a blip has at any given moment. Energy expenditure increases hunger.
-**position, velocity, acceleration** - States to track physics-based movement and location on map
-**target** - Blip's desired destination at any moment in time
-**objective** - One of the below objectives
-**Happiness** - This one is a little odd, I admit.  IT's a measure of how much attentional resources the child is receiving. If the happiness gets 
+- **hunger** - A little counter-intuitive, this will actually be the _lack_ of hunger. A higher number means less hunger, a lower number means more hunger. 
+0 hunger will start eating away at energy, while full hunger (1) will give energy a boost.  
+- **energy** - 0-1;  Dictates the amount of energy a blip has at any given moment. Energy expenditure increases hunger.  
+- **position, velocity, acceleration** - States to track physics-based movement and location on map  
+- **target** - Blip's desired destination at any moment in time
+- **objective** - One of the below objectives
+- **Happiness** - This one is a little odd, I admit.  IT's a measure of how much attentional resources the child is receiving. If the happiness gets 
 too low, it starts to negatively affect energy and hunger. 
 
 #### Traits
-**genes** - These had a whole section
-**father, mother** - Keeping track of parents allows blips to figure out who they're related to, and gives 
-us the option of tracking the progression of a gene over generations
-**children_birthed** - A list of direct children
-**children_raised** - A list of all children raised, including those of kin
-**sex** - Blip gender... get your head out of the gutter
+- **genes** - These had a whole section  
+- **father, mother** - Keeping track of parents allows blips to figure out who they're related to, and gives
+us the option of tracking the progression of a gene over generations  
+- **children_birthed** - A list of direct children  
+- **children_raised** - A list of all children raised, including those of kin  
+- **sex** - Blip gender... get your head out of the gutter  
 
 #### Objectives
 1. Make Child
