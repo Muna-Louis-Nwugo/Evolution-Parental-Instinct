@@ -85,7 +85,7 @@ At the end, of one cycle, world applies the changes to the blips, based on the s
 by way of the predation heat map)
 ## Rules
 
-### Background
+### Lore
 Our blips live on a rogue planet, drifting through interstellar space, mostly undetectable to human beings. They live underwater on the sea floor.
 Their planets tectonic movement, combined with the gravitational energy provided by their world's interaction with her sister planet, create just 
 enough thermal energy to allow for liquid water underneath the vast expanse of ice that envelops her surface. A barren, star-less corner of the 
@@ -159,6 +159,10 @@ Given the normal distribution of randomness, blips are unlikely to deviate much 
 They will also not be very willing to take risks if their parents neglect them, and more willing to if their parents don't. Then again, if their parents
 take good care of them, they are less likely to have to venture beyond the nest. All in all, I doubt it will become a serious issue.
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dd8f6e31e34dbb5023f2b45ab611f412d2cf66bc
 ### Traits, States, and Objectives
 #### States
 **hunger** - A little counter-intuitive, this will actually be the _lack_ of hunger. A higher number means less hunger, a lower number means more hunger. 
@@ -206,5 +210,6 @@ When raising children, if the parents aren't finding food, they are spending att
 ## Planned
 1. Agent reproduction
 2. Agent objective/target setting
-3. Targetted Agent movement and collision avoidance
-4. Agent behavioural patterns (based on genetics
+3. Targeted Agent movement and collision avoidance
+4. Agent behavioural patterns (based on genetics)
+>>>>>>> dd8f6e31e34dbb5023f2b45ab611f412d2cf66bc
