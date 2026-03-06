@@ -159,10 +159,6 @@ Given the normal distribution of randomness, blips are unlikely to deviate much 
 They will also not be very willing to take risks if their parents neglect them, and more willing to if their parents don't. Then again, if their parents
 take good care of them, they are less likely to have to venture beyond the nest. All in all, I doubt it will become a serious issue.
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dd8f6e31e34dbb5023f2b45ab611f412d2cf66bc
 ### Traits, States, and Objectives
 #### States
 **hunger** - A little counter-intuitive, this will actually be the _lack_ of hunger. A higher number means less hunger, a lower number means more hunger. 
