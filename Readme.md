@@ -212,4 +212,3 @@ When raising children, if the parents aren't finding food, they are spending att
 2. Agent objective/target setting
 3. Targeted Agent movement and collision avoidance
 4. Agent behavioural patterns (based on genetics)
->>>>>>> dd8f6e31e34dbb5023f2b45ab611f412d2cf66bc
