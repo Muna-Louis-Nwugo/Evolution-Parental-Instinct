@@ -52,6 +52,6 @@ class Blip():
 
         self.position = (x + x_offset, y + y_offset)
         
-
+ 
     def set_target(self, target: tuple[float, float]) -> None:
         self.target = target
