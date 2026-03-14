@@ -13,4 +13,4 @@ Homepage = "https://github.com/Muna-Louis-Nwugo/Evolution-Parental-Instinct"
 
 [tool.maturin]
 python-source = "python"
-module-name = "simulate"
+module-name = "simulate.blip_mover"

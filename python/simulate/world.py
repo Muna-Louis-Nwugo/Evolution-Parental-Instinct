@@ -1,5 +1,5 @@
-from blip import Blip
-import move
+from . import blip
+from . import blip_mover
 import random
 import logging
 
@@ -20,17 +20,17 @@ class World():
         self.height = height
         self.time_elapsed: int = 0
 
-        self.blips: list[Blip] = self.__generate_blips(num_starting_blips)
+        self.blips: list[blip.Blip] = self.__generate_blips(num_starting_blips)
 
 
-    def __generate_blips(self, num) -> list[Blip]:
-        blips: list[Blip] = []
+    def __generate_blips(self, num) -> list[blip.Blip]:
+        blips: list[blip.Blip] = []
 
         for i in range(num):
             x: float = random.randrange(0, self.width)
             y: float = random.randrange(0, self.height)
 
-            blips.append(Blip((x, y)))
+            blips.append(blip.Blip((x, y)))
         
         return blips
     
@@ -39,9 +39,12 @@ class World():
     Steps through simulation
     """
     def step(self) -> None:
-        move.move_blips(self.blips, self.width, self.height)
+        print(self.blips)
+        # blip_mover.move_blips(self.blips, self.width, self.height)
+        blip_mover.move_blips(self.blips)
+        print(self.blips)
 
 
 if __name__ == "__main__":  
     world = World(1, 12, 12)
-    
+    world.step()

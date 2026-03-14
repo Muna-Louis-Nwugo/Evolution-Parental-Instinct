@@ -1,10 +1,18 @@
 #[pyo3::pymodule]
 mod blip_mover {
-  use pyo3::prelude::*;
+    use pyo3::{
+        prelude::*,
+        types::{PyList, PyTuple},
+    };
 
-  /// Formats the sum of two numbers as string.
-  #[pyfunction]
-  fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
-    Ok((a + b).to_string())
-  }
+    #[pyfunction]
+    fn move_blips<'py>(blips: &Bound<'py, PyList>) -> PyResult<Bound<'py, PyList>> {
+        for blip in blips {
+            let change: (i32, i32) = (0, 1);
+
+            blip.call_method1("update_pos", change)?;
+        }
+
+        Ok(blips.clone())
+    }
 }

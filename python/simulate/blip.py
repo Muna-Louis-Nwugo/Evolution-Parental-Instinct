@@ -46,11 +46,11 @@ class Blip():
     """
     Updates this blip's position
     """
-    def update_pos(self, offset: tuple[float, float]) -> None:
+    def update_pos(self, x_offset: float, y_offset: float) -> None:
         x = self.position[0]
         y = self.position[1]
 
-        self.position = (x + offset[0], y + offset[1])
+        self.position = (x + x_offset, y + y_offset)
         
 
     def set_target(self, target: tuple[float, float]) -> None:
