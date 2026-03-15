@@ -40,11 +40,12 @@ class World():
     """
     def step(self) -> None:
         print(self.blips)
-        # blip_mover.move_blips(self.blips, self.width, self.height)
-        blip_mover.move_blips(self.blips)
+        blip_mover.move_blips(self.blips, self.width, self.height)
         print(self.blips)
 
 
 if __name__ == "__main__":  
     world = World(1, 12, 12)
-    world.step()
+
+    for i in range(10):
+        world.step()
