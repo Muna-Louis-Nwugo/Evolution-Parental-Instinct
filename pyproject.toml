@@ -5,7 +5,7 @@ build-backend = "maturin"
 [project]
 name = "evolution-parental-instinct"
 version = "0.0.1"
-requires-python = ">=3.13"
+requires-python = ">=3"
 dependencies = []
 
 [project.urls]
@@ -13,4 +13,4 @@ Homepage = "https://github.com/Muna-Louis-Nwugo/Evolution-Parental-Instinct"
 
 [tool.maturin]
 python-source = "python"
-module-name = "simulate.blip_mover"
+module-name = "support.simulate"

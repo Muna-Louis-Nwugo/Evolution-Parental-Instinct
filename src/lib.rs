@@ -1,3 +1,7 @@
+// begin transition to Rust-centric simulator
+mod blip;
+mod world;
+
 #[pyo3::pymodule]
 mod blip_mover {
     use pyo3::{PyResult, prelude::*, types::PyList};
