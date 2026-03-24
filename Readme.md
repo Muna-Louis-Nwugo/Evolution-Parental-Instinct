@@ -1,3 +1,12 @@
+# TODO: UPDATE SYSTEM ARCHITECTURE TO REFLECT NEW THREADING Plan
+1. World is created and immediately creates x threads
+2. Threads have listeners for events containing their identity
+3. World Partitions map and gives threads specific partitions
+4. Threads execute (decisions/move completely in local area, blips that cross boundaries are "tagged" for review)
+5. Thread publishes completed event with updated data and pauses execution
+6. World consolidates data from threads, clears up conflicts, repartitions, and republishes events
+7. Thread continues execution with new information
+
 # Evolution of parental instinct
 Whether viewed through the lens of science or history, Darwinism's impact on modern biology has been undeniably profound.
 Yet, for something so important, it is incredibly hard to visualize; the time scales over which evolution operates are simply unfathomable to

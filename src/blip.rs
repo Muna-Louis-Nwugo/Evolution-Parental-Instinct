@@ -47,4 +47,15 @@ impl Blip {
         /*gets blip's current acceleration*/
         &self.acceleration
     }
+
+    // setters
+    pub fn update_position(&mut self, x: i32, y: i32) {
+        let current_x = self.position.0;
+        let current_y = self.position.1;
+
+        let new_x = current_x + x;
+        let new_y = current_y + y;
+
+        self.position = (new_x, new_y);
+    }
 }
