@@ -197,7 +197,6 @@ When raising children, if the parents aren't finding food, they are spending att
 # Technologies/Methods Used
 1. Python
 2. Rust
-3. JavaScript
 3. Numpy
 4. Agent-Based Simulation
 5. p5.js
