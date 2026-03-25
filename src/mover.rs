@@ -6,7 +6,7 @@ pub fn move_blips(blips: Vec<&mut Blip>, x: i32, y: i32) {
     }
 }
 
-fn check_collision(blips: &Vec<Blip>) -> Option<Vec<&Blip, &Blip>> {
+fn check_collision(blips: &Vec<Blip>) -> Option<Vec<(&Blip, &Blip)>> {
     let mut collision_detected: bool = false;
     let mut collision_pairs: Vec<(&Blip, &Blip)> = Vec::new();
     let blips_len: usize = blips.len();
@@ -29,6 +29,6 @@ fn check_collision(blips: &Vec<Blip>) -> Option<Vec<&Blip, &Blip>> {
     if !collision_detected {
         None
     } else {
-        Some(Box::new(collision_pairs))
+        Some(collision_pairs)
     }
 }
