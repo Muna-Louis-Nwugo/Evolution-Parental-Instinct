@@ -1,4 +1,5 @@
 use super::blip::Blip;
+use super::mover;
 
 pub struct Partition {
     id: i32,
@@ -68,12 +69,14 @@ impl World {
         coordinates
     }
     // TO BE IMPLEMENTED
-    pub fn step() {}
+    pub fn step() {
+        mover::move_blips(self.blips, 0, 1);
+    }
 
     fn generate_blips(count: i32) -> Vec<Blip> {
         let mut blips: Vec<Blip> = Vec::new();
 
-        for i in 1..=count {
+        for _i in 1..=count {
             let blip = Blip::new((0, 0));
             blips.push(blip)
         }
