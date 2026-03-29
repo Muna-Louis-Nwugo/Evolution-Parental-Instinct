@@ -69,8 +69,8 @@ impl World {
         coordinates
     }
     // TO BE IMPLEMENTED
-    pub fn step() {
-        mover::move_blips(self.blips, 0, 1);
+    pub fn step(&mut self) {
+        mover::move_blips(&mut self.blips, 0, 1);
     }
 
     fn generate_blips(count: i32) -> Vec<Blip> {
