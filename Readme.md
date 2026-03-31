@@ -207,12 +207,14 @@ When raising children, if the parents aren't finding food, they are spending att
 
 # Phases
 ## Completed
-
+1. Basic (and I mean basic) agent movements
+2. Basic collision avoidance
+   
 ## In progress
-1. Basic agent movement (with spatial partitioning)
+1. Spatial partitioning and threads
+2. Agent target setting and path following
+3. More sophisticated collision avoidance
 
 ## Planned
-1. Agent reproduction
-2. Agent objective/target setting
-3. Targeted Agent movement and collision avoidance
-4. Agent behavioural patterns (based on genetics)
+1. Agent reproduction/genetics
+2. Agent behavioural patterns
