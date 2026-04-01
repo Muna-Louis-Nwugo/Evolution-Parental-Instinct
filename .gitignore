@@ -211,3 +211,4 @@ __marimo__/
 
 # Rust Stuff
 simulate.cpython-314-aarch64-linux-gnu.so
+#src/main.rs
