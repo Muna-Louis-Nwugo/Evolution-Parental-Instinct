@@ -1,11 +1,5 @@
-# TODO: UPDATE SYSTEM ARCHITECTURE TO REFLECT NEW THREADING Plan
-1. World is created and immediately creates x threads
-2. Threads have listeners for events containing their identity
-3. World Partitions map and gives threads specific partitions
-4. Threads execute (decisions/move completely in local area, blips that cross boundaries are "tagged" for review)
-5. Thread publishes completed event with updated data and pauses execution
-6. World consolidates data from threads, clears up conflicts, repartitions, and republishes events
-7. Thread continues execution with new information
+# NOTE: This project has been archived for the forseeable future
+In my excitement to build this project, I let it get completely out of hand. From september 2025 until january of 2026, I had hyped up this project internally, causing be to fall victim to scope creep and overdesign. I spent 5 months designing and re-desgning the project without a single line of code written until February of 2026, only to have to modify my tech stack twice to better accomodate the rather outlandish requirements I had set for the project. Not all is lost, though, as the project did teach me the foundations of Rust - enough for my next project (see my github profile); and the importance of not asking too much of your solution before implementing it.
 
 # Evolution of parental instinct
 Whether viewed through the lens of science or history, Darwinism's impact on modern biology has been undeniably profound.
@@ -38,6 +32,14 @@ In the interest of my relentless battle against mundanity in these simulations, 
 I believe these modifications were good for adding some extra variability and raising the stakes.
 
 ## System architecture
+### TODO: UPDATE SYSTEM ARCHITECTURE TO REFLECT NEW THREADING Plan
+1. World is created and immediately creates x threads
+2. Threads have listeners for events containing their identity
+3. World Partitions map and gives threads specific partitions
+4. Threads execute (decisions/move completely in local area, blips that cross boundaries are "tagged" for review)
+5. Thread publishes completed event with updated data and pauses execution
+6. World consolidates data from threads, clears up conflicts, repartitions, and republishes events
+7. Thread continues execution with new information
 The system follows a modular, top-down execution flow, with World serving as the primary orchestrator and container of blips.
 It is set up in such a way to allow changes to cascade from most abstract to most granular, involving all agents at the same time.
 This makes for a much more straightforward implementation of things like reproduction and spatial partitioning. 
